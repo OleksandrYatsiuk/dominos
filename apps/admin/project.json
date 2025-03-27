@@ -1,28 +1,28 @@
 {
-  "name": "dominos",
+  "name": "admin",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/dominos/src",
+  "sourceRoot": "apps/admin/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/dominos",
-        "index": "apps/dominos/src/index.html",
-        "browser": "apps/dominos/src/main.ts",
+        "outputPath": "dist/apps/admin",
+        "index": "apps/admin/src/index.html",
+        "browser": "apps/admin/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/dominos/tsconfig.app.json",
+        "tsConfig": "apps/admin/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/dominos/public"
+            "input": "apps/admin/public"
           }
         ],
-        "styles": ["apps/dominos/src/styles.scss"],
+        "styles": ["apps/admin/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -53,10 +53,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "dominos:build:production"
+          "buildTarget": "admin:build:production"
         },
         "development": {
-          "buildTarget": "dominos:build:development"
+          "buildTarget": "admin:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -64,7 +64,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "dominos:build"
+        "buildTarget": "admin:build"
       }
     },
     "lint": {
@@ -74,14 +74,14 @@
       "executor": "@nx/vite:test",
       "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "reportsDirectory": "../../coverage/apps/dominos"
+        "reportsDirectory": "../../coverage/apps/admin"
       }
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "dominos:build",
-        "staticFilePath": "dist/apps/dominos/browser",
+        "buildTarget": "admin:build",
+        "staticFilePath": "dist/apps/admin/browser",
         "spa": true
       }
     }
