@@ -2,7 +2,10 @@
   "name": "@dominos/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "nx build admin && nx build public",
+    "run-many": "nx run-many --target=serve --projects=public,admin"
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "~19.2.0",

@@ -1,15 +1,12 @@
 {
-    "version": 1,
-    "builds": [
+    "routes": [
         {
-            "src": "dist/apps/public/browser/**",
-            "use": "@vercel/static",
-            "dest": "/public"
+            "src": "/public/(.*)",
+            "dest": "dist/apps/public/$1"
         },
         {
-            "src": "dist/apps/admin/browser/**",
-            "use": "@vercel/static",
-            "dest": "/admin"
+            "src": "/admin/(.*)",
+            "dest": "dist/apps/admin/$1"
         }
     ]
 }
