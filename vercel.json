@@ -2,12 +2,14 @@
     "version": 1,
     "builds": [
         {
-            "src": "apps/public/src/main.server.ts",
-            "use": "@vercel/angular"
+            "src": "dist/apps/public/browser/**",
+            "use": "@vercel/static",
+            "dest": "/public"
         },
         {
-            "src": "apps/admin/src/main.ts",
-            "use": "@vercel/angular"
+            "src": "dist/apps/admin/browser/**",
+            "use": "@vercel/static",
+            "dest": "/admin"
         }
     ]
 }
