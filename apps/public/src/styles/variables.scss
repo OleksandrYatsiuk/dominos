@@ -1,0 +1,11 @@
+$c-dark: #000;
+$c-red: #be171b;
+$c-white: white;
+$c-outline: #d7d7d7d7;
+
+:root {
+    --color-dark: #{$c-dark};
+    --color-red: #{$c-red};
+    --color-white: #{$c-white};
+    --color-outline: #{$c-outline};
+}

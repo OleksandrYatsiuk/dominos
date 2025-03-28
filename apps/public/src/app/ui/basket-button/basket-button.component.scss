@@ -1,0 +1,13 @@
+.basket-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    padding: 8px 16px;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border-radius: 16px;
+    border: none;
+}

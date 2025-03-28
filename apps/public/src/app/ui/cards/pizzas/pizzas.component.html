@@ -1,0 +1,24 @@
+<div class="card">
+
+    <div class="card-image">
+        <img src="/images/pizza.avif" alt="">
+    </div>
+
+    <div class="card-name">
+        <h3>{{pizza().name.uk}}</h3>
+    </div>
+
+    <span class="ingredients"></span>
+
+    <div class="card-footer">
+
+        <div class="price">
+            <span>{{pizza().price.small}}</span>
+            <span>грн</span>
+        </div>
+
+        <div class="action">
+            <app-basket-button />
+        </div>
+    </div>
+</div>

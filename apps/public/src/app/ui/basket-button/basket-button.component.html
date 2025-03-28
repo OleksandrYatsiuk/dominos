@@ -1,0 +1,11 @@
+@if (count() > 0) {
+<div class="basket-button">
+    <button class="basket-action minus">-</button>
+    <span>{{count()}}</span>
+    <button class="basket-action plus">+</button>
+</div>
+} @else {
+<div class="basket-button">
+    <span class="basket-button-label">Додати </span>
+</div>
+}

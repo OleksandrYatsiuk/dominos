@@ -1,0 +1,8 @@
+<div class="home">
+    <section class="promotions-slider">Promotions ...</section>
+    <section class="pizzas-list">
+        @for (pizza of pizzas.value(); track pizza) {
+        <app-pizzas-card [pizza]="pizza" />
+        }
+    </section>
+</div>

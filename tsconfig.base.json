@@ -15,8 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@dominos/shared-components": ["libs/shared-components/src/index.ts"],
-      "@dominos/shared-styles": ["libs/shared-styles/src/index.ts"]
+      "@dominos/shared-components": ["libs/shared-components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
