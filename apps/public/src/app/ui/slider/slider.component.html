@@ -1,0 +1,20 @@
+<div class="slider-container">
+    <div class="slides">
+        @for (slide of slides(); track $index) {
+
+        @if (slideTemplate(); as template) {
+        <div class="slide" [id]="$index">
+            <ng-container [ngTemplateOutlet]="template" [ngTemplateOutletContext]="{$implicit:slide}" />
+        </div>
+        }
+        }
+    </div>
+
+    <div class="navigation">
+
+        @for (dot of items(); track $index) {
+
+        <span class="dot" [ngClass]="{current: $index === activeIndex()}"></span>
+        }
+    </div>
+</div>

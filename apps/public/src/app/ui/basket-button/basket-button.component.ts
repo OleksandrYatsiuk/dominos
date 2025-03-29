@@ -1,15 +1,13 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-basket-button',
-  imports: [CommonModule],
+  imports: [TranslateModule],
   templateUrl: './basket-button.component.html',
   styleUrl: './basket-button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BasketButtonComponent {
-
-
   count = signal(0);
 }

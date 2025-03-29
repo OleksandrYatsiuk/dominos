@@ -1,5 +1,28 @@
 <div class="home">
-    <section class="promotions-slider">Promotions ...</section>
+
+    <div class="promotions">
+        <app-slider [slides]="promotions.value()" [slideTemplate]="slideTemplate">
+
+            <ng-template #slideTemplate let-promo>
+                <div class="promo-slider">
+
+                    <div class="promo-image">
+                        <img src="images/promotion.avif" alt="">
+                    </div>
+
+                    <a [routerLink]="['promos', promo.id]">
+                        <div class="promo-link">
+                            {{'labels.details'|translate}}
+                        </div>
+                    </a>
+
+                </div>
+            </ng-template>
+        </app-slider>
+    </div>
+
+    <h1>{{'labels.pizza'|translate}}</h1>
+
     <section class="pizzas-list">
         @for (pizza of pizzas.value(); track pizza) {
         <app-pizzas-card [pizza]="pizza" />

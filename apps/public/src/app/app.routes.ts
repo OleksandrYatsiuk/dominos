@@ -7,6 +7,10 @@ export const appRoutes: Route[] = [
         component: HomeComponent,
     },
     {
+        path: 'pizzas',
+        loadComponent: () => import('./pages/pizzas/pizzas.component').then((c) => c.PizzasComponent),
+    },
+    {
         path: '**',
         redirectTo: '/'
     },

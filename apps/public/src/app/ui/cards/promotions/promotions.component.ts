@@ -1,11 +1,14 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { CardComponent } from '../../card/card.component';
+import { PromotionView } from '../../../core/interfaces/promotions.interface';
 
 @Component({
   selector: 'app-promotions-card',
-  imports: [CommonModule],
+  imports: [CardComponent],
   templateUrl: './promotions.component.html',
   styleUrl: './promotions.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PromotionsCardComponent { }
+export class PromotionsCardComponent {
+  promotion = input<PromotionView>();
+}

@@ -1,0 +1,18 @@
+<div class="card">
+
+    @if (image(); as template) {
+    <div class="card-image">
+        <ng-container [ngTemplateOutlet]="template" />
+    </div>
+    }
+
+    @if (content(); as template) {
+    <ng-container [ngTemplateOutlet]="template" />
+    }
+
+    @if (footer(); as template) {
+    <div class="card-footer">
+        <ng-container [ngTemplateOutlet]="template" />
+    </div>
+    }
+</div>

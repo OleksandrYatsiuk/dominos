@@ -1,0 +1,36 @@
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: hidden;
+}
+.slides {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.slide {
+    scroll-snap-align: start;
+
+    flex: 0 0 100%;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        background-color: var(--color-outline);
+        border-radius: 50%;
+
+        &.current{
+            background-color: var(--color-red);
+        }
+    }
+}

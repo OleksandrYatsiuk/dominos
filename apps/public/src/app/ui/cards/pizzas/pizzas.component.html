@@ -1,17 +1,19 @@
-<div class="card">
-
-    <div class="card-image">
+<app-card [content]="content" [footer]="footer" [image]="image">
+    <ng-template #image>
         <img src="/images/pizza.avif" alt="">
-    </div>
+    </ng-template>
+    <ng-template #content>
+        <div class="card-content">
+            <div class="name">
+                <h3>{{pizza().name.uk}}</h3>
+            </div>
 
-    <div class="card-name">
-        <h3>{{pizza().name.uk}}</h3>
-    </div>
+            <span class="ingredients"></span>
+        </div>
 
-    <span class="ingredients"></span>
+    </ng-template>
 
-    <div class="card-footer">
-
+    <ng-template #footer>
         <div class="price">
             <span>{{pizza().price.small}}</span>
             <span>грн</span>
@@ -20,5 +22,5 @@
         <div class="action">
             <app-basket-button />
         </div>
-    </div>
-</div>
+    </ng-template>
+</app-card>

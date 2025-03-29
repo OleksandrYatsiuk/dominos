@@ -1,1 +1,11 @@
-<p>promotions works!</p>
+<app-card [image]="image" [content]="content">
+    <ng-template #image>
+        <img src="/images/stub.webp" alt="">
+    </ng-template>
+
+    <ng-template #content>
+        <h3 class="name">{{promotion()?.name}}</h3>
+
+        <span [innerHTML]="promotion()?.description"></span>
+    </ng-template>
+</app-card>
