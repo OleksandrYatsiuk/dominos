@@ -1,11 +1,15 @@
-<app-card [image]="image" [content]="content">
+<app-card class="promotion-card" [image]="image" [content]="content">
     <ng-template #image>
-        <img src="/images/stub.webp" alt="">
+        <img src="/images/promotion.avif" [alt]="promotion()?.name">
     </ng-template>
 
     <ng-template #content>
-        <h3 class="name">{{promotion()?.name}}</h3>
+        <div class="content">
+            <h3 class="name">{{promotion()?.name}}</h3>
 
-        <span [innerHTML]="promotion()?.description"></span>
+            <span [innerHTML]="promotion()?.description"></span>
+
+            <button class="btn btn-red">{{'labels.details'|translate}}</button>
+        </div>
     </ng-template>
 </app-card>

@@ -1,13 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PizzasService } from './pizzas.service';
+import { PizzasApiService } from './pizzas.service';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-describe('PizzasService', () => {
-  let service: PizzasService;
+describe('PizzasApiService', () => {
+  let service: PizzasApiService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(PizzasService);
+    TestBed.configureTestingModule({
+      providers: [provideHttpClient(withInterceptorsFromDi())]
+    });
+    service = TestBed.inject(PizzasApiService);
   });
 
   it('should be created', () => {

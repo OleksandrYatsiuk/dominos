@@ -11,6 +11,10 @@ export const appRoutes: Route[] = [
         loadComponent: () => import('./pages/pizzas/pizzas.component').then((c) => c.PizzasComponent),
     },
     {
+        path: 'promotions',
+        loadComponent: () => import('./pages/promotions/promotions.component').then((c) => c.PromotionsComponent),
+    },
+    {
         path: '**',
         redirectTo: '/'
     },
