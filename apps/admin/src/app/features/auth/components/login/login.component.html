@@ -1,5 +1,17 @@
-<section>
-    <div class="login">
-        <h3>Login Page (SPA)</h3>
-    </div>
+<section class="auth-page">
+    <form class="login" [formGroup]="form" (ngSubmit)="onSave()">
+
+        <div class="logo">
+            <img src="/images/logo.avif" alt="Domino's Pizza">
+        </div>
+
+        <input type="text" pInputText formControlName="username">
+
+        <p-password [label]="'Password'" formControlName="password" [feedback]="false" [toggleMask]="true" />
+
+        <p-button styleClass="stretch" type="submit" label="Login" icon="pi pi-sign-in" [loading]="loading$|async" />
+
+        <a [routerLink]="['/auth/forgot-password']">Forgot Password?</a>
+    </form>
+
 </section>

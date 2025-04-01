@@ -1,0 +1,12 @@
+.p-popover {
+    --p-popover-gutter: 2px;
+    --p-popover-background: var(--color-white);
+    --p-popover-color: var(--color-dark);
+    --p-popover-border-color: var(--color-outline);
+    --p-popover-border-radius: 8px;
+    --p-popover-shadow: none;
+
+    .p-popover-content {
+        --p-popover-content-padding: 8px;
+    }
+}

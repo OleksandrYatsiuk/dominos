@@ -1,0 +1,29 @@
+<div class="header">
+    <div class="logo">
+        <a routerLink="/">
+            <img class="logo-image" src="/images/logo.avif" alt="Domino's Pizza">
+        </a>
+    </div>
+    <div class="profile">
+
+
+        <button class="avatar-container" (click)="m.toggle($event)">
+
+            <div class="avatar">
+                @if (profile();as profile) {
+                <ng-container>
+                    @if (profile.image) {
+                    <img class="avatar-image" [src]="profile.image" [alt]="abbreviate()">
+                    } @else{
+                    <span> {{abbreviate()}}</span>
+                    }
+                </ng-container>
+                } @else {
+                <em class="pi pi-user"></em>
+                }
+            </div>
+        </button>
+    </div>
+</div>
+
+<p-menu #m [model]="profileActions()" [popup]="true" />

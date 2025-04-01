@@ -1,0 +1,28 @@
+.p-menu {
+    --p-menu-background: var(--color-white);
+    --p-menu-color: var(--color-dark);
+    --p-menu-border-color: var(--color-outline);
+    --p-menu-border-radius: 8px;
+
+    .p-menu-list {
+        --p-menu-list-padding: 8px;
+        --p-menu-list-gap: 2px;
+
+        .p-menu-item-content {
+            --p-menu-transition-duration: var(--transition-all);
+            --p-menu-item-border-radius: 8px;
+            --p-menu-item-color: var(--color-dark);
+
+            --p-menu-item-focus-background: var(--color-outline);
+            --p-menu-item-focus-color: var(--color-dark);
+
+            --p-menu-item-icon-color: var(--color-dark);
+            --p-menu-item-icon-focus-color: var(--color-dark);
+
+            .p-menu-item-link {
+                --p-menu-item-padding: 8px;
+                --p-menu-item-gap: 8px;
+            }
+        }
+    }
+}

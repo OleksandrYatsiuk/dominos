@@ -1,21 +1,23 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { LoginComponent } from './login.component';
+import { MainComponent } from './main.component';
 import { provideStore } from '@ngxs/store';
-import { AuthState } from '../../../../core/states/auth/auth.state';
+import { ProfileState } from '../../core/states/profile/profile.state';
 import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 
-describe('LoginComponent', () => {
-  let component: LoginComponent;
-  let fixture: ComponentFixture<LoginComponent>;
+describe('MainComponent', () => {
+  let component: MainComponent;
+  let fixture: ComponentFixture<MainComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LoginComponent],
-      providers: [provideStore([AuthState]), provideHttpClient(), provideRouter([])]
+      imports: [MainComponent],
+      providers: [
+        provideStore([ProfileState]), provideHttpClient(), provideRouter([])
+      ]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(LoginComponent);
+    fixture = TestBed.createComponent(MainComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,19 @@
+$c-dark: #000;
+$c-red: #fe0021;
+$c-white: #fff;
+$c-blue: #00648e;
+$c-dark-blue: #024663;
+$c-outline: #d7d7d7d7;
+
+$transition: all 0.3s;
+
+:root {
+    --color-dark: #{$c-dark};
+    --color-red: #{$c-red};
+    --color-white: #{$c-white};
+    --color-outline: #{$c-outline};
+    --color-blue: #{$c-blue};
+    --color-dark-blue: #{$c-dark-blue};
+
+    --transition-all: #{$transition};
+}
