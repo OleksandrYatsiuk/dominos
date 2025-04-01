@@ -1,7 +1,7 @@
 {
-  "name": "shared-components",
+  "name": "core",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/shared-components/src",
+  "sourceRoot": "libs/core/src",
   "prefix": "lib",
   "projectType": "library",
   "tags": [],
@@ -10,7 +10,7 @@
       "executor": "@nx/vite:test",
       "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "reportsDirectory": "../../coverage/libs/shared-components"
+        "reportsDirectory": "../../coverage/libs/core"
       }
     },
     "lint": {
