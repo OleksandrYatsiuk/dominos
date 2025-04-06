@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { UserService, UserView } from '@dominos/core';
-import { tap } from 'rxjs';
+import { of, tap } from 'rxjs';
 import { FetchProfile, Logout } from './profile.actions';
 import { ProfileService } from '../../services/profile/profile.service';
 import { Router } from '@angular/router';
@@ -34,11 +34,11 @@ export class ProfileState {
 
     @Action(Logout)
     logout(ctx: StateContext<ProfileStateModel>) {
-        return this.profileApiService.logout()
-            .pipe(tap(() => {
-                ctx.patchState({ profile: null });
-                this.profileService.updateSettings({ accessToken: null });
-                this.router.navigate(['/auth/login']);
-            }));
+        const request$ = this.profileService.isAuthenticated() ? this.profileApiService.logout() : of(undefined);
+        return request$.pipe(tap(() => {
+            this.profileService.updateSettings({ accessToken: null });
+            ctx.patchState({ profile: null });
+            this.router.navigate(['/auth/login']);
+        }));
     }
 }

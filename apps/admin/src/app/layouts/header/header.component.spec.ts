@@ -4,6 +4,8 @@ import { provideStore } from '@ngxs/store';
 import { ProfileState } from '../../core/states/profile/profile.state';
 import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
+import { MenubarModule } from 'primeng/menubar';
+import { MenuModule } from 'primeng/menu';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -11,7 +13,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HeaderComponent],
+      imports: [HeaderComponent, MenubarModule, MenuModule],
       providers: [provideStore([ProfileState]), provideHttpClient(), provideRouter([])]
 
     }).compileComponents();

@@ -1,0 +1,36 @@
+<p-table #table [columns]="cols()" [value]="pizzas.value()||[]" [tableStyle]="{ 'min-width': '50rem' }">
+
+    <ng-template #caption>
+        <div class="flex items-center justify-between">
+            <span class="text-xl font-bold">Користувачі</span>
+
+            <input pInputText type="text" (input)="globalFilter(table, $event)" placeholder="Search keyword" />
+        </div>
+    </ng-template>
+
+    <ng-template #header let-columns>
+        <tr>
+            @for (col of columns; track col) {
+
+            <ng-container>
+                @if (col.sortable) {
+                <th [pSortableColumn]="col.field">
+                    <span> {{ col.header }} </span>
+                    <p-sortIcon [field]="col.field" />
+                </th>
+                } @else {
+                <th> <span> {{ col.header }} </span> </th>
+                }
+            </ng-container>
+
+            }
+        </tr>
+    </ng-template>
+    <ng-template #body let-product let-columns="columns">
+        <tr>
+            @for (col of columns; track col) {
+            <td> {{product[col.field]}} </td>
+            }
+        </tr>
+    </ng-template>
+</p-table>
