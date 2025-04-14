@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.up.railway.app/railway.schema.json",
+    "build": {
+        "buildCommand": "nx build backend",
+        "nixpacksPlan": {
+            "phases": {
+                "install": {
+                    "dependsOn": [
+                        "setup"
+                    ],
+                    "cmds": [
+                        "pnpm install --legacy-peer-deps"
+                    ]
+                }
+            }
+        }
+    },
+    "deploy": {
+        "startCommand": "node dist/apps/backend/main.js"
+    }
+}
