@@ -14,7 +14,7 @@
                 }
             }
         },
-        "buildCommand": "nx build backend"
+        "buildCommand": "npx nx build backend"
     },
     "deploy": {
         "startCommand": "node dist/apps/backend/main.js"
